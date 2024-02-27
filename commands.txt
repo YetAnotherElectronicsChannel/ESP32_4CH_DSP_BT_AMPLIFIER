@@ -1,0 +1,143 @@
+//set lowpass
+Set. Request: ?,0,chann_bitmask,ord(0/1/2),freq,q*10
+Answer: !,0,1,?
+
+//get lowpass
+Get. Request: ?,25,chann(0/1/2/3)
+Answer: !,25,sel.chann(0/1/2/3),ord(0/1/2),freq,q*10,?
+
+//set hipass
+Set. Request: ?,1,chann_bitmask,ord(0/1/2),freq,q*10
+Answer: !,1,1?
+
+//get hipass
+Get. Request: ?,26,chann(0/1/2/3)
+Answer: !,26,sel.chann(0/1/2/3),ord(0/1/2),freq,q*10,?
+ 
+
+//eq 
+if q=-1 -> highshelf
+if q=-2 -> lowshelf
+
+//set eq
+Set. Request: ?,2,chann_bitmask,eqno(0-4),freq,gain,q*10
+Answer: !,2,1,?
+
+//get eq
+Get. Request: ?,27,chann(0/1/2/3),eqno(0-4)
+Answer: !,27,sel.-channel,sel.-no,freq,gain,q*10,? 
+
+
+//set gain
+Set. Request: ?,3,gain_ch0,gain_ch1,gain_ch2,gain_ch3
+Answer: !,3,1,?
+  
+//get gain
+Get. Request: ?,28
+Answer: !, 28, gain_ch0,gain_ch1,gain_ch2,gain_ch3,?
+
+
+
+//limiter Thresholds & release Set
+Set. Request: ?,4,thres_lim_ch0,thres_lim_ch1,thres_lim_ch2,thres_lim_ch3,rel_ch0, rel_ch1, rel_ch2, rel_ch3
+Answer: !,4,1,?
+
+//limiter threshold & release get
+Get. Request: ?,29
+Answer: !,29,thres_ch0,thres_ch1,thres_ch2,thres_ch3,rel_ch0, rel_ch1, rel_ch2, rel_ch3?
+
+
+//level, limiter and ir monitoring
+Get. Request: ?,30
+No IR -> Answer: !,55,lev0,lev1,lev2,lev3,limact0,limact1,limact2,limact3,dyngain*1000,?
+With IR -> Answer: !,555,lev0,lev1,lev2,lev3,limact0,limact1,limact2,limact3,dyngain*1000,IR_Addr,IR_Cmd,?
+
+
+//set mute (1=mute, 0=unmute)
+Set. Request: ?,6,ch0,ch1,ch2,ch3
+Answer: !,6,1,?
+
+//get mute
+Get. Request: ?,31
+Answer: !,31,ch0,ch1,ch2,ch3,?
+
+
+// set polarity (1=inverted, 0=normal)
+Set. Request: ?,7,ch0,ch1,ch2,ch3
+Answer: !,7,1,?
+
+//get polarity
+Get. Request: ?,32
+Answer: !,32,ch0,ch1,ch2,ch3,?
+
+
+//Set Source (0=left, 1=right, 2=monosum)
+Set. Request: ?,13,ch0,ch1,ch2,ch3
+Answer: !,13,1,?
+
+//get sourceselect
+Get. Request: ?,38
+Answer: !,38,ch0,ch1,ch2,ch3,?
+
+
+
+//set delay in cm (centimeters). Value can be between 0 and 150
+Set. Request: ?,8,ch0,ch1,ch2,ch3
+Answer: !,8,1,?
+
+//get delay in cm
+Get- Request: ?,33
+Answer: !,33,ch0,ch1,ch2,ch3,?
+
+
+// bass enhance (bass 30-200, gain 0-500)
+Set. Request: ?,11,frequency,gain
+Answer: !,11,1,?
+
+//get bass enhance
+Get. Request: ?,36
+Answer: !,36,frequency,gain,?
+
+
+// set dynamic bass 
+Set. Reqest: ?,14,watchtime,threshold,frequency,gain,gainspeed
+Answer: !,14,1,?
+
+//get dynamic bass
+Get. Request: ?,39
+Answer: !,39,watchtime,threshold,frequency,gain,gainspeed,?
+
+
+//set Bypass Channel
+Set.Request: ?,40,chann_bitmask,LP,HP,EQ0,EQ1,EQ2,EQ3,EQ4
+Answer: !,40,1,?
+
+//get bypass channel
+Get Request: ?,65,Channel
+Answer: !,65,Channel,LP,HP,EQ0,EQ1,EQ2,EQ3,EQ4
+
+//set Bypass virtual bass & dynbass
+Set.Request: ?,41,VBS,DynBass
+Answer: !,41,1?
+
+//get bypass virtual bass & dynbass
+Get Request: ?,66
+Answer: !,66,VBS,DynBass
+
+
+//set ir remote
+Set. Request ?,12,addr_onoff,cmd_onoff,addr_volup,cmd_volup,addr_voldown,cmd_volldown,addr_mute,cmd_mute
+Answer: !,12,1,?
+
+//get ir remote
+Get. Request? ?,37
+Answer !,37,addr_onoff,cmd_onoff,addr_volup,cmd_volup,addr_voldown,cmd_volldown,addr_mute,cmd_mute,?
+
+
+//Reset all
+Set. Request: ?,9
+Answer: !,9,1,?
+
+//savetoflash
+Set. Request: ?,10
+Answer: !,10,(success 0=no, 1=yes),?

@@ -1,0 +1,8 @@
+C:\Users\Markus\Documents\SharpDevelop Projects\dsp_gui\dsp_gui\bin\Release\dsp_gui.exe
+C:\Users\Markus\Documents\SharpDevelop Projects\dsp_gui\dsp_gui\bin\Release\MACTrackBarLib.dll
+C:\Users\Markus\Documents\SharpDevelop Projects\dsp_gui\dsp_gui\bin\Release\PeakMeterCtrl.dll
+C:\Users\Markus\Documents\SharpDevelop Projects\dsp_gui\dsp_gui\obj\Release\dsp_gui.csprojResolveAssemblyReference.cache
+C:\Users\Markus\Documents\SharpDevelop Projects\dsp_gui\dsp_gui\obj\Release\dsp_gui.LimitCalc.resources
+C:\Users\Markus\Documents\SharpDevelop Projects\dsp_gui\dsp_gui\obj\Release\dsp_gui.MainForm.resources
+C:\Users\Markus\Documents\SharpDevelop Projects\dsp_gui\dsp_gui\obj\Release\dsp_gui.csproj.GenerateResource.Cache
+C:\Users\Markus\Documents\SharpDevelop Projects\dsp_gui\dsp_gui\obj\Release\dsp_gui.exe
